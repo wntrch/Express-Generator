@@ -12,7 +12,7 @@ router.get(
   cors.corsWithOptions,
   authenticate.verifyUser,
   authenticate.verifyAdmin,
-  function (req, res) {
+  function (req, res, next) {
     User.find()
       .then((users) => {
         res.statusCode = 200;
