@@ -90,7 +90,7 @@ promotionRouter
     cors.corsWithOptions,
     authenticate.verifyUser,
     authenticate.verifyAdmin,
-    (req, res) => {
+    (req, res, next) => {
       Promotion.findByIdAndDelete(req.params.promotionId)
         .then((response) => {
           res.statusCode = 200;
